@@ -67,7 +67,7 @@ namespace MyWork
             valida = false;
             while (valida == false)
             {
-                Console.WriteLine("Qual o seu continente ?");
+                Console.WriteLine("Qual o seu continente?");
                 Console.WriteLine("1 - Americano");
                 Console.WriteLine("2 - Asia");
                 Console.WriteLine("3 - Áfricano");
