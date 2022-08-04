@@ -45,19 +45,48 @@ namespace MyWork
             Console.WriteLine("Qual foi o seu faturamento anual do ano passado?");
             decimal faturamento = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine("Qual o porte da empresa? 1 - Pequeno 2 - Média 3 - Grande");
-            int porte = Convert.ToInt32(Console.ReadLine());
+            int porte = 0;
+            valida = false;
+            while (valida == false)
+            {
+                Console.WriteLine("Qual o porte da empresa?");
+                Console.WriteLine("1 - Pequeno");
+                Console.WriteLine("2 - Média");
+                Console.WriteLine("3 - Grande");
+                porte = Convert.ToInt32(Console.ReadLine());
+                if (porte == 1 || porte == 2 || porte == 3)
+                {
+                    valida = true;
+                }
+                else
+                {
+                    Console.WriteLine("Opção invalida, tente novamente!");
+                }
+            }
+            int cont = 0;
+            valida = false;
+            while (valida == false)
+            {
+                Console.WriteLine("Qual o seu continente ?");
+                Console.WriteLine("1 - Americano");
+                Console.WriteLine("2 - Asia");
+                Console.WriteLine("3 - Áfricano");
+                Console.WriteLine("4 - Europeu");
+                Console.WriteLine("5 - Oceania");
+                Console.WriteLine("6 - Antártida");
+                cont = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Qual o seu continente ?");
-            Console.WriteLine("1 - Americano");
-            Console.WriteLine("2 - Asia");
-            Console.WriteLine("3 - Áfricano");
-            Console.WriteLine("4 - Europeu");
-            Console.WriteLine("5 - Oceania");
-            Console.WriteLine("6 - Antártida");
-            int cont = Convert.ToInt32(Console.ReadLine());
+                if (cont == 1 || cont == 2 || cont == 3 || cont == 4 || cont == 5 || cont == 6)
+                {
+                    valida = true;
+                }
+                else
+                {
+                    Console.WriteLine("Opção invalida, tente novamente!");
+                }
+            }
+
             Guid continente = new Guid();
-
 
             switch (cont)
             {
@@ -72,7 +101,6 @@ namespace MyWork
                     break;
                 case 4:
                     continente = Guid.Parse("f2e73781-9c13-ed11-b83e-000d3ac12d88");
-
                     break;
                 case 5:
                     continente = Guid.Parse("4b8028a7-9c13-ed11-b83e-000d3ac12d88");
@@ -163,16 +191,11 @@ namespace MyWork
                             valida = true;
                             Environment.Exit(0);
                             break;
-
-
-
-
-
                     }
                 }
-                else 
-                { 
-                    Console.WriteLine("Resposta Invalida, por favor tente novamente!");
+                else
+                {
+                    Console.WriteLine("Opção Invalida, tente novamente!");
                 }
             }
         }
